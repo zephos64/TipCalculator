@@ -8,9 +8,69 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
+    <EditText
+        android:id="@+id/etAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="78dp"
+        android:ems="10"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/btnMiddleTip"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnSmallTip"
+        android:layout_centerHorizontal="true"
+        android:onClick="newTip"
+        android:text="@string/midTipAmount" />
+
+    <Button
+        android:id="@+id/btnLargeTip"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/etAmount"
+        android:layout_alignTop="@+id/btnMiddleTip"
+        android:onClick="newTip"
+        android:text="@string/largeTipAmount" />
+
+    <TextView
+        android:id="@+id/tvTipText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnSmallTip"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="54dp"
+        android:text="@string/tiptext"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tvTipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTipText"
+        android:layout_alignBottom="@+id/tvTipText"
+        android:layout_alignRight="@+id/btnLargeTip"
+        android:layout_toRightOf="@+id/btnMiddleTip"
+        android:text="@string/tipAmount"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/btnSmallTip"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etAmount"
+        android:layout_centerVertical="true"
+        android:onClick="newTip"
+        android:text="@string/smallTipAmount" />
 
 </RelativeLayout>
