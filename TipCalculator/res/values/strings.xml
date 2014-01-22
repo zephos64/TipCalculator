@@ -9,5 +9,6 @@
     <string name="smallTipAmount">10%</string>
     <string name="midTipAmount">15%</string>
     <string name="largeTipAmount">20%</string>
+    <string name="custTip">Custom Tip:</string>
 
 </resources>

@@ -22,31 +22,11 @@
         <requestFocus />
     </EditText>
 
-    <Button
-        android:id="@+id/btnMiddleTip"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/btnSmallTip"
-        android:layout_centerHorizontal="true"
-        android:onClick="newTip"
-        android:text="@string/midTipAmount" />
-
-    <Button
-        android:id="@+id/btnLargeTip"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/etAmount"
-        android:layout_alignTop="@+id/btnMiddleTip"
-        android:onClick="newTip"
-        android:text="@string/largeTipAmount" />
-
     <TextView
         android:id="@+id/tvTipText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnSmallTip"
+        android:layout_alignLeft="@+id/etAmount"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="54dp"
         android:text="@string/tiptext"
@@ -58,19 +38,51 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/tvTipText"
         android:layout_alignBottom="@+id/tvTipText"
-        android:layout_alignRight="@+id/btnLargeTip"
-        android:layout_toRightOf="@+id/btnMiddleTip"
+        android:layout_alignParentRight="true"
         android:text="@string/tipAmount"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <Button
-        android:id="@+id/btnSmallTip"
-        style="?android:attr/buttonStyleSmall"
+    <EditText
+        android:id="@+id/etCustTipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/rgTipAmount"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/rgTipAmount"
+        android:ems="10"
+        android:inputType="numberSigned" />
+
+    <RadioGroup
+        android:id="@+id/rgTipAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/etAmount"
-        android:layout_centerVertical="true"
-        android:onClick="newTip"
-        android:text="@string/smallTipAmount" />
+        android:layout_below="@+id/etAmount" >
+
+        <RadioButton
+            android:id="@+id/rgbSmallTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/smallTipAmount" />
+
+        <RadioButton
+            android:id="@+id/rgbMiddleTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/midTipAmount" />
+
+        <RadioButton
+            android:id="@+id/rgbLargeTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/largeTipAmount" />
+
+        <RadioButton
+            android:id="@+id/rgbCustTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/custTip" />
+    </RadioGroup>
 
 </RelativeLayout>
